@@ -8,6 +8,13 @@ Et on ouvre
 * Des ports spécifiques
 * Voire des rules custom (rich rules)
 
+# Le point de vue RedHat : firewalld VS iptables VS nftables
+The following is a brief overview in which scenario you should use one of the following utilities:
+
+* firewalld: Use the firewalld utility for simple firewall use cases. The utility is easy to use and covers the typical use cases for these scenarios.
+* nftables: Use the nftables utility to set up complex and performance-critical firewalls, such as for a whole network.
+* iptables: The iptables utility on Red Hat Enterprise Linux uses the nf_tables kernel API instead of the legacy back end. The nf_tables API provides backward compatibility so that scripts that use iptables commands still work on Red Hat Enterprise Linux. For new firewall scripts, Red Hat recommends to use nftables.
+
 ### Zones par défaut : 
 * drop : le niveau de confiance le plus bas. Toutes les connexions entrantes sont interrompues sans réponse et seules les connexions sortantes sont possibles.
 * block : similaire à ce qui précède, mais au lieu de simplement interrompre les connexions, les demandes entrantes sont rejetées avec un message icmp-host-prohibited ou icmp6-adm-prohibited.
